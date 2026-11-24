@@ -39,3 +39,9 @@ Console.WriteLine("http://localhost:5037/api/conexao/testar");
 
 // Mantém a API em execução até o encerramento com Ctrl + C.
 await app.WaitForShutdownAsync();
+
+// Registra o Repository responsável pelas consultas de produtos.
+builder.Services.AddScoped<ProdutoRepository>();
+
+// Registra o Service responsável pelas operações de produtos.
+builder.Services.AddScoped<ProdutoService>();
